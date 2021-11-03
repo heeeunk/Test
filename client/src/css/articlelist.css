@@ -1,0 +1,8 @@
+.article-list {
+  width: 55vw;
+  /* height: 40vh; */
+  margin-top: 2vh;
+  padding: 3vh;
+  background-color: #FDE5CA;
+  display: inline-block;
+}

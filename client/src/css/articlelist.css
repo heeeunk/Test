@@ -3,6 +3,149 @@
   /* height: 40vh; */
   margin-top: 2vh;
   padding: 3vh;
-  background-color: #FDE5CA;
+  background-color: #FEEBD8;
   display: inline-block;
+}
+
+.article-title {
+  border-bottom:2px solid; 
+  text-align:left; 
+  padding-left:20px; 
+  font-size:30px;
+  font-weight: 500;
+  padding-bottom:10px;
+}
+
+.article-content {
+  background-color:#FFFFFF;
+  border-bottom:1px solid;
+  font-size: 20px;
+  text-align: left;
+  padding: 50px;
+  padding-left:50px;
+}
+
+.btn-pagination{
+  margin-top: 15px;
+  margin-right: 10px;
+  background-color: #FFB15C;
+  border-color: #FFB15C;
+  cursor: pointer;
+}
+
+.table{
+  /* border-top:1px solid; */
+  border-collapse: collapse;
+}
+th, td {
+  border-bottom: 1px solid #444444;
+  padding: 10px;
+}
+
+.write-article{
+  margin-bottom:20px;
+  padding:30px;
+}
+
+.create-article-title {
+  width:100%; 
+  height:50px; 
+  font-size:18px; 
+  margin-top:10px; 
+  border:none;
+  padding-left: 20px ;
+}
+
+.create-article-content {
+  width:100%; 
+  height:360px; 
+  font-size:18px; 
+  margin-top:30px; 
+  border:none;
+  margin-top:30px;
+  padding: 20px;
+
+}
+
+.btn-write-submit{
+  /* position:absolute; */
+  /* right:4vw; */
+  /* bottom: 3vh; */
+  width:100px;
+  height: 40px;
+  background-color: #8987C7;
+  color:#FFFFFF;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.btn-write-cancel{
+  /* position:absolute; */
+  /* right:4vw; */
+  /* bottom: 3vh; */
+  width:100px;
+  height: 40px;
+  background-color: #CD3407;
+  margin-left: 30px;
+  color:#FFFFFF;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.btn-write-update{
+  /* position:absolute; */
+  /* right:4vw; */
+  /* bottom: 3vh; */
+  width:100px;
+  height: 40px;
+  background-color: #EFC74A;
+  color:#FFFFFF;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.btn-write-delete{
+  /* position:absolute; */
+  /* right:4vw; */
+  /* bottom: 3vh; */
+  width:100px;
+  height: 40px;
+  background-color: #CD3407;
+  color:#FFFFFF;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-left: 30px;
+}
+
+.btn-write-comment{
+  /* position:absolute; */
+  /* right:4vw; */
+  /* bottom: 3vh; */
+  width:100px;
+  height: 40px;
+  background-color: #292958;
+  color:#FFFFFF;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.comments{
+  background-color: #FDE5CA;
+  padding: 40px;
+  margin-top: 40px;
+}
+
+.comment-area{
+  width:100%; 
+  margin-top:30px;
+  padding: 20px;
+  font-size: 20px;
 }

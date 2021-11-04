@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <div class="container">
-      <div class="header">
+      <div class="header" >
+        <div class="header" @click="goHome" style="display:hidden"></div>
         <span class="header-text">스마일게이트님의 Blog</span>
-        <button class="btn-write" @click="goCreateArticle">글쓰기</button>
+        <button id="writeArticleBtn" class="btn-write" @click="goCreateArticle">글쓰기</button>
       </div>
       <router-view/>
     </div>
@@ -15,9 +16,16 @@ export default {
   name: 'App',
   methods: {
     goCreateArticle(){
+      // const a = document.querySelector('#writeArticleBtn')
+      // a.style.display = "none"
       this.$router.push('article')
+    },
+    goHome(){
+      if(this.$route.path!=='/'){
+        this.$router.push('/')
+      }
     }
-  }
+  },
 }
 </script>
 
@@ -35,7 +43,7 @@ body{
 
 .container {
   width: 57.5vw;
-  height: 100vh;
+  /* height: 100vh; */
   background-color: #FFB15C;
   display: inline-block;
 }
@@ -60,7 +68,7 @@ body{
 
 .btn-write{
   position:absolute;
-  right:4vw;
+  right:3vw;
   bottom: 3vh;
   width:100px;
   height: 40px;

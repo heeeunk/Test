@@ -2,16 +2,16 @@
   <div class="article-list">
     <table class="table" style="width:100%;">
       <thead>
-        <tr style="justify-content:space-around">
-            <td style="text-align:left">글목록</td>
-            <td style="text-align:right">작성일</td>
+        <tr style="font-weight:bold; font-size:18px; border-bottom:2px solid;">
+            <td style="text-align:left; ">글목록</td>
+            <td style="text-align:right;">작성일</td>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(article, idx) in articles"  v-show="setPaginate(idx)" :key="idx">
 
-          <td style="text-align:left" @click="page">
-            <router-link :to="{ path: '/', query: { articleId: article.id  }}">
+          <td style="text-align:left;;" @click="page">
+            <router-link :to="{ path: '/', query: { articleId: article.id  }}" style=" text-decoration:none">
               {{ article.title }}
             </router-link>
             
@@ -21,9 +21,9 @@
       </tbody>
     </table>
     <div id="pagination">
-      <a href="#" class="btn btn-default" v-for="page_index in paginate_total" @click.prevent="updateCurrent(page_index)" :key="page_index">
+      <button class="btn btn-pagination" v-for="page_index in paginate_total" @click.prevent="updateCurrent(page_index)" :key="page_index">
         {{ page_index}}
-      </a>
+      </button>
     </div>
   </div>
 </template>
@@ -48,9 +48,10 @@ export default {
     }
   },
   created: function(){
-    this.getArticles()
+    
   },
   mounted: function(){
+    this.getArticles()
   },
 
   methods: {
@@ -60,7 +61,7 @@ export default {
         url: 'http://127.0.0.1:8000/api/v1/articles',
       })
       .then(res => {
-        this.articles = res.data
+        this.articles = res.data.reverse()
         this.paginate_total = parseInt(this.articles.length/this.paginate+1)
         console.log(this.articles)
       })

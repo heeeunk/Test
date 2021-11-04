@@ -18,10 +18,6 @@ class CommentListSerializer(serializers.ModelSerializer):
 
 
 class ArticleSerializer(serializers.ModelSerializer):
-    # 기존 필드 override
-    # 첫번째 방법
-    # comment_set = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
-    # 두번째 방법
     comment_set = CommentListSerializer(many=True, read_only=True)
     comment_count = serializers.IntegerField(source='comment_set.count', read_only=True)
 

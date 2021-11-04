@@ -1,5 +1,6 @@
 <template>
   <div class="article-list">
+    <!-- 글목록 -->
     <table class="table" style="width:100%;">
       <thead>
         <tr style="font-weight:bold; font-size:18px; border-bottom:2px solid;">
@@ -9,17 +10,16 @@
       </thead>
       <tbody>
         <tr v-for="(article, idx) in articles"  v-show="setPaginate(idx)" :key="idx">
-
           <td style="text-align:left;;" @click="page">
             <router-link :to="{ path: '/', query: { articleId: article.id  }}" style=" text-decoration:none">
               {{ article.title }}
             </router-link>
-            
           </td>
           <td style="text-align:right">{{ article.created_at.substring(0,10) }}</td>
         </tr>
       </tbody>
     </table>
+    <!-- 페이지네이션 -->
     <div id="pagination">
       <button class="btn btn-pagination" v-for="page_index in paginate_total" @click.prevent="updateCurrent(page_index)" :key="page_index">
         {{ page_index}}
@@ -29,16 +29,10 @@
 </template>
 
 <script>
-import '../css/articlelist.css'
 import axios from 'axios'
 
 export default {
   name: 'ArticleList',
-  // props: {
-  //   articleId: {
-  //     type: Number
-  //   }
-  // },
   data: function(){
     return {
       current: 1,
@@ -47,13 +41,9 @@ export default {
       paginate_total: 10,
     }
   },
-  created: function(){
-    
-  },
   mounted: function(){
     this.getArticles()
   },
-
   methods: {
     getArticles: function(){
       axios({
@@ -63,7 +53,6 @@ export default {
       .then(res => {
         this.articles = res.data.reverse()
         this.paginate_total = parseInt(this.articles.length/this.paginate+1)
-        console.log(this.articles)
       })
       .catch(err => {
         console.log(err)

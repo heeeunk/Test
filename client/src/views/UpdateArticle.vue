@@ -37,7 +37,7 @@ export default {
         })
         .then(res => {
           this.$router.push('/')
-          console.log(res.data)
+          res.data
         })
         .catch(err => {
           console.log(err)
@@ -58,7 +58,6 @@ export default {
       .then(res => {
         this.articleTitle = res.data.title
         this.articleContent = res.data.content
-        console.log(res.data)
       })
       .catch(err => {
         console.log(err)

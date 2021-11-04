@@ -2,7 +2,7 @@
   <div id="app">
     <div class="container">
       <div class="header" >
-        <div class="header" @click="goHome" style="display:hidden"></div>
+        <div class="header" @click="goHome" style="display:hidden; cursor:pointer;"></div>
         <span class="header-text">스마일게이트님의 Blog</span>
         <button id="writeArticleBtn" class="btn-write" @click="goCreateArticle">글쓰기</button>
       </div>
@@ -12,12 +12,12 @@
 </template>
 
 <script>
+import './css/smilegate.css'
+
 export default {
   name: 'App',
   methods: {
     goCreateArticle(){
-      // const a = document.querySelector('#writeArticleBtn')
-      // a.style.display = "none"
       this.$router.push('article')
     },
     goHome(){
@@ -38,12 +38,11 @@ export default {
 }
 
 body{
-  background-color: #3B397B;
+  background: url(./assets/background.jpg);
 }
 
 .container {
   width: 57.5vw;
-  /* height: 100vh; */
   background-color: #FFB15C;
   display: inline-block;
 }
@@ -77,5 +76,6 @@ body{
   font-size: 20px;
   font-weight: bold;
   border-radius: 10px;
+  cursor:pointer;
 }
 </style>
